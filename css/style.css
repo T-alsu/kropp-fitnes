@@ -538,7 +538,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .motivation-card {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   column-gap: clamp(30px, 10.42vw, 200px);
 }
