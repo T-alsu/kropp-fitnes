@@ -424,6 +424,13 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
   translate: -50% 0;
 }
+.section-description {
+  font-size: 20px;
+  line-height: 1.65;
+  text-transform: uppercase;
+  color: var(--color-light);
+  z-index: 2;
+}
 
 /* Header Start */
 .header {
@@ -490,11 +497,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: currentColor;
   box-shadow: 15px 0 0 currentColor;
 }
-
 /* Header End */
 
 /* First banner Start */
-
 .banner {
   display: flex;
   flex-direction: column;
@@ -560,11 +565,9 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-light-gray);
   transition-duration: var(--transition-duration);
 }
-
 /* First banner End */
 
 /* Motivation Start */
-
 .motivation-item:nth-child(even) {
   background-color: var(--color-dark-alternate);
 }
@@ -593,11 +596,9 @@ h1, h2, h3, h4, h5, h6 {
 .motivation-card-image {
   margin-block: -60px;
 }
-
 /* Motivation End */
 
 /* Training Types Start */
-
 .training-types {
   position: relative;
   padding-top: 70px;
@@ -628,11 +629,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-light);
   text-align: center;
 }
-
 /* Training Types End */
 
 /* Join us Start */
-
 .join-us-video-wrapper {
   position: relative;
   display: flex;
@@ -707,12 +706,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 52px;
 }
 .join-us-form-subtitle {
-  font-size: 20px;
-  line-height: 1.65;
-  text-transform: uppercase;
-  color: var(--color-light);
   margin-top: -0.4em;
-  z-index: 2;
   text-align: center;
 }
 .join-us-form-body {
@@ -723,11 +717,9 @@ h1, h2, h3, h4, h5, h6 {
 .join-us-form-input {
   max-width: 400px;
 }
-
 /* Join us End */
 
 /* Location Start */
-
 .location {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -749,11 +741,34 @@ h1, h2, h3, h4, h5, h6 {
 .location-description:not(:last-child) {
   margin-bottom: 37px;
 }
-
 /* Location End */
 
-/* Media Start */
+/* Fit family Start */
+.family {
+  background-color: var(--color-dark-alternate);
+}
+.family-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+  text-align: center;
+  padding-top: 132px;
+  padding-bottom: 62px;
+}
+.family-gallery {
+  display: flex;
+  justify-content: start;
+  column-gap: 26px;
+  scroll-snap-type: x mandatory; /* Придает контейнеру механику слайдера */
+  overflow-x: scroll; /* Добавляет возможность скроллинга контейнера по горизонтали */
+}
+.family-gallery-image {
+  scroll-snap-align: start; /* Указывает, что элемент привязывается к началу прокручиваемой оси */
+}
+/* Fit family End */
 
+/* Media Start */
 @media (max-width: 1919px) {
   .motivation-card-image {
     margin-block: -30px;
@@ -807,11 +822,18 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column-reverse;
   }
+  .family-gallery-image {
+    height: 360px;
+    max-width: max-content;
+  }
 }
 
 @media (max-width: 768px) {
   .button {
     padding-inline: 18px;
+  }
+  .section-description {
+    font-size: 16px;
   }
   .header {
     padding-top: 10px;
@@ -861,9 +883,6 @@ h1, h2, h3, h4, h5, h6 {
   .join-us-video-play-button {
     width: 140px;
   }
-  .join-us-form-subtitle {
-    font-size: 16px;
-  }
   .join-us-form-body {
     flex-direction: column;
     align-items: center;
@@ -871,6 +890,13 @@ h1, h2, h3, h4, h5, h6 {
   }
   .location-description:not(:last-child) {
     margin-bottom: 20px;
+  }
+  .family-header {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .family-gallery {
+    column-gap: 10px;
   }
 }
 
@@ -895,4 +921,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 362px) {
+  .family-title.backdrop-title::before {
+    right: calc(100% - 34px);
+  }
+  .family-title.backdrop-title.centered::after {
+    top: -0.17em;
+  }
+}
 /* Media End */
